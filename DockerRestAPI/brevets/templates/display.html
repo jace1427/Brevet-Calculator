@@ -1,0 +1,22 @@
+<html>
+<table class="control time table">
+<tr>
+    <th> Km </th>
+    <th>Name</th>
+    <th>Open</th>
+    <th>Close</th>
+</tr>
+
+{% for item in items %}
+<tr class="control">
+  <td> {{ item.km }} </td>
+  <td> {{ item.names }} </td>
+  <td> {{ item.open_times }} </td>
+  <td> {{ item.close_times }} </td>
+</tr>
+{% endfor %}
+
+</table>
+<br />
+<form action="/"><input type="submit" value="Back"></input></form>
+</html>

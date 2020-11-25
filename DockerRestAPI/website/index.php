@@ -1,18 +1,22 @@
 <html>
     <head>
-        <title>CIS 322 REST-api demo: Laptop list</title>
+        <title>Brevets DB</title>
     </head>
 
     <body>
-        <h1>List of laptops</h1>
+        <h1>List of Times (JSON)</h1>
         <ul>
             <?php
-            $json = file_get_contents('http://laptop-service/');
-            $obj = json_decode($json);
-	          $laptops = $obj->Laptops;
-            foreach ($laptops as $l) {
-                echo "<li>$l</li>";
-            }
+            $json = file_get_contents('http://brevets/listAll');
+            echo $json;
+            ?>
+        </ul>
+
+        <h1>List of Open Times (CSV)</h1>
+        <ul>
+            <?php
+            $json = file_get_contents('http://brevets/listAll/csv');
+            echo $json;
             ?>
         </ul>
     </body>
